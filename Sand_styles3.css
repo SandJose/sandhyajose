@@ -1,0 +1,219 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 2000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content-section {
+    display: none; /* Hide all sections by default */
+}
+
+
+.content-section.active {
+    display: block; /* Show the active section */
+}
+
+header {
+    background: linear-gradient(to right, #ffffff, #fcfeff); /* Gradient background */
+    color: rgb(23, 57, 131);
+    padding: 20px 0;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-section {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    padding: 20px;
+}
+.profile-img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 70px;
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(233, 233, 233, 0); /* Add shadow to image */
+
+}
+
+.intro {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    width: 20%; /* Set the width to 50% of its container */
+    max-width: 600px; /* Optional: set a maximum width */
+    padding: 10px; /* Optional: add padding for better spacing */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    
+}
+.intro h1 {
+    margin-top: 0;
+    color: indigo #12205e;
+    text-align: justify;
+}
+
+.intro p {
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 0;
+    margin-left: 10px; /* Adjust the value as needed */
+    margin-right: 10px; /* Adjust the value as needed */
+    
+}
+.center-text {
+    text-align: justify;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+}
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distributes space between items */
+    width: 100%;
+}
+
+.nav-name {
+    color: white;
+    font-weight: bold;
+    margin-left: 20px; /* Optional: add some margin for spacing */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #00aaff; /* Lighter blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+main {
+    padding: 20px 0;
+}
+#about h2 {
+    font-size: 1.5em; /* Same font size for all headings */
+    margin-left: 0; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    color: #1d3d97; /* Consistent color */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+#research h2 {
+    font-size: 1.5em; /* Same font size for all headings */
+    margin-left: 0; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    color: #1d3d97; /* Consistent color */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+
+#publications h3 {
+    
+    font-size: 1.75em; /* Same font size for all headings */
+    margin-left: 0; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    
+    color: #1d3d97;
+    font-weight: bold; /* Makes headings stand out */
+}
+
+#publications h4 {
+    font-size: 1.25em; /* Same font size for all headings */
+    margin-left: 40px; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    color: #444; /* Consistent color */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+#publications h5 {
+    font-size: 1.25em; /* Same font size for all headings */
+    margin-left: 0; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    color: #444; /* Consistent color */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+#publications h6 {
+    font-size: 1.25em; /* Same font size for all headings */
+    margin-left: 0; /* Ensures no extra indent */
+    margin-top: 20px; /* Space above each heading */
+    margin-bottom: 10px; /* Space below each heading */
+    color: #444; /* Consistent color */
+    font-weight: bold; /* Makes headings stand out */
+}
+
+
+#contact h2 {
+
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #1d3d97;
+}
+
+#contact p {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.8;
+    color: #050505;
+    margin-left: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
