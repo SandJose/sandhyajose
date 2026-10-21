@@ -8,6 +8,9 @@
   --fog-a: rgba(255, 255, 255, .9);
   --fog-b: rgba(160, 190, 202, .55);
   --bar: rgba(232, 238, 240, .72);
+  --card: rgba(255, 255, 255, .55);
+  --chip: rgba(31, 104, 116, .12);
+  --mark: rgba(31, 104, 116, .28);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -20,6 +23,9 @@
     --fog-a: rgba(90, 130, 145, .35);
     --fog-b: rgba(40, 80, 95, .5);
     --bar: rgba(13, 23, 28, .72);
+    --card: rgba(255, 255, 255, .04);
+    --chip: rgba(127, 198, 210, .14);
+    --mark: rgba(127, 198, 210, .3);
   }
 }
 
@@ -72,7 +78,9 @@ main { padding: 0 clamp(1.25rem, 5vw, 4rem); max-width: 78rem; margin: 0 auto; }
   letter-spacing: -.02em; margin: 0 0 .6rem;
   animation: clear 2.6s ease-out both;
 }
-.role { color: var(--lake); font-weight: 600; margin: 0 0 2rem; }
+.hero-text { container-type: inline-size; }
+.tagline { font: italic 600 2.5cqw/1.4 "Fraunces", Georgia, serif; margin: 0 0 2rem; color: var(--soft); animation: clear 3.4s ease-out both; }
+.role { color: var(--lake); font-weight: 600; margin: 0 0 .7rem; }
 .hero-text p { max-width: 62ch; margin: 0 0 1.25rem; hyphens: auto; }
 @keyframes clear { from { filter: blur(22px); opacity: 0; } to { filter: blur(0); opacity: 1; } }
 
@@ -81,12 +89,31 @@ main { padding: 0 clamp(1.25rem, 5vw, 4rem); max-width: 78rem; margin: 0 auto; }
 h2 { font: 300 clamp(1.9rem, 4vw, 2.75rem)/1.1 "Fraunces", Georgia, serif; margin: 0 0 2rem; }
 h3 { font: 500 1.25rem "Fraunces", Georgia, serif; color: var(--soft); margin: 2.5rem 0 1rem; }
 
-.topics { margin: 0 0 2rem; display: grid; gap: 1.5rem; }
-.topics div { display: grid; grid-template-columns: 13rem 1fr; gap: 1.5rem; }
-.topics dt { font: 500 1.2rem/1.3 "Fraunces", Georgia, serif; }
-.topics dd { margin: 0; color: var(--soft); max-width: 55ch; }
-.topics dd:empty { display: none; }
-.lede { font: italic 300 1.35rem/1.5 "Fraunces", Georgia, serif; max-width: 48ch; margin: 0; }
+.topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 0 0 3rem; }
+.topic {
+  position: relative; overflow: hidden;
+  padding: 1.6rem 1.5rem 1.5rem; border-radius: 1.1rem;
+  background: var(--card); border: 1px solid var(--rule);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.topic::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #2171b5, var(--lake), #6baed6); }
+.topic:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -18px rgba(10, 40, 55, .5); }
+.topic h3 { font: 500 1.35rem/1.2 "Fraunces", Georgia, serif; color: var(--ink); margin: .3rem 0 1rem; }
+.topic.lead { grid-column: 1 / -1; padding: 2rem 2rem 1.8rem; }
+.topic.lead h3 { font-size: 1.9rem; font-weight: 300; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips li { background: var(--chip); color: var(--ink); border-radius: 999px; padding: .3rem .85rem; font-size: .93rem; line-height: 1.4; }
+.now {
+  position: relative; overflow: hidden; max-width: 62rem;
+  padding: 2rem 2rem 2rem 2.8rem; border-radius: 1.25rem;
+  background: linear-gradient(120deg, var(--card), var(--chip));
+  border: 1px solid var(--rule);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.now::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: linear-gradient(to bottom, #08306b, #2171b5, #6baed6, #fcbba1, #fb6a4a, #cb181d); }
+.now p { font: 300 clamp(1rem, 1.5vw, 1.25rem)/1.55 "Fraunces", Georgia, serif; margin: 0; }
+.now mark { background: none; color: inherit; font-weight: 500; padding: 0 .1em; }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
 .pubs li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 1.1rem 0; }
@@ -98,15 +125,30 @@ h3 { font: 500 1.25rem "Fraunces", Georgia, serif; color: var(--soft); margin: 2
 .links li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; }
 .links span { color: var(--soft); }
 
+.planet { font: italic 300 clamp(1.6rem, 4vw, 2.6rem)/1.2 "Fraunces", Georgia, serif; color: var(--ink); margin: 0 0 2.5rem; }
+.planet strong { font-weight: 600; color: #d62828; }
+.copy { margin: 0; }
 footer { text-align: center; color: var(--soft); padding: 3rem 1rem 4rem; font-size: .95rem; }
 
+@media (max-width: 900px) { .topics { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
+  .tagline { white-space: normal; font-size: 1rem; }
   .hero { grid-template-columns: 1fr; }
   .portrait { position: static; max-width: 15rem; }
-  .topics div, .links li { grid-template-columns: 1fr; gap: .2rem; }
-  .pubs li { grid-template-columns: 1fr; gap: .1rem; }
+    .pubs li { grid-template-columns: 1fr; gap: .1rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .fog i, .hero h1, .portrait img { animation: none; }
+  .fog i, .hero h1, .tagline, .portrait img { animation: none; }
+  .topic { transition: none; }
   html { scroll-behavior: auto; }
+}
+
+/* climate stripes */
+.stripes { display: flex; }
+.stripes span { flex: 1; }
+.bar .stripes { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; }
+.stripes.band {
+  height: 5.5rem; margin-top: 3rem;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 85%);
+          mask-image: linear-gradient(to bottom, transparent, #000 85%);
 }
