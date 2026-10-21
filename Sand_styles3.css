@@ -38,8 +38,8 @@ header {
 }
 .profile-section {
     display: flex;
-    align-items: left;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 20px;
 }
 .profile-img {
@@ -58,8 +58,8 @@ header {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     text-align: justify;
     width: 20%; /* Set the width to 50% of its container */
     max-width: 600px; /* Optional: set a maximum width */
