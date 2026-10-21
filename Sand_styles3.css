@@ -43,7 +43,7 @@ header {
     padding: 20px;
 }
 .profile-img {
-    width: 250px;
+    width: 350px;
     height: auto;
     border-radius: 10px;
     margin-left: 5px;
@@ -61,9 +61,9 @@ header {
     align-items: flex-start;
     justify-content: flex-start;
     text-align: justify;
-    width: 20%; /* Set the width to 50% of its container */
+    width: 50%; /* Set the width to 50% of its container */
     max-width: 600px; /* Optional: set a maximum width */
-    padding: 10px; /* Optional: add padding for better spacing */
+    padding: 20px; /* Optional: add padding for better spacing */
     box-sizing: border-box; /* Ensures padding is included in the width */
     
 }
